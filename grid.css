@@ -1,0 +1,132 @@
+
+.testimonial-grid {
+    display: grid;
+    gap: 20px;
+    position: relative;
+}
+
+.side{
+    position: absolute;
+    background-color: hsl(var(--clr-primary-400));
+    width: 250px;
+    text-align: center;
+    padding: 8px;
+    border-radius: 2px;
+    font-size: var(--fs-300);
+    color:  hsl(var(--clr-neutral-100));
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+}
+
+.right{
+    bottom: 0;
+}
+
+
+/* Another approach Grid Layout 2 Starts*/
+.gridcont2 {
+    grid-template-areas: 'one'
+    'two'
+    'three'
+    'four'
+    'five'
+}
+
+.gridcont2 .side{
+    background-color: hsl(var(--clr-secondary-500));
+    color: hsl(var(--clr-neutral-100));
+}
+
+.gridcont2 .testimonial:nth-child(2) {
+    grid-area: one;
+}
+.gridcont2 .testimonial:nth-child(3) {
+    color: yellow;
+    grid-area: two;
+}
+
+ .gridcont2 .testimonial:nth-child(4) {
+    grid-area: three;
+}
+.gridcont2 .testimonial:nth-child(5) {
+    grid-area: four;
+}
+
+.gridcont2 .testimonial:nth-child(6) {
+    grid-area: five;
+}
+/* Another approach Grid Layout 2 Ends*/
+
+
+
+/* Tablets */
+@media(min-width:600px) {
+    .gridcont1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gridcont1 .dc,
+    .gridcont1 .pa {
+        grid-column: span 2;
+    }
+
+    .gridcont1 .kw {
+        grid-column: 2/3;
+        grid-row: 2/4;
+    }
+/* Another approach Grid Layout 2 Starts*/
+    .gridcont2{
+        grid-template-areas: 'one one'
+        'two five'
+        'three five'
+        'four four';
+    }
+/* Another approach Grid Layout 2 Ends*/
+
+}
+
+/* Desktop */
+@media(min-width:1000px) {
+    .gridcont1 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gridcont1 .dc,
+    .gridcont1 .pa {
+        grid-column: span 2;
+    }
+
+    .gridcont1 .kw {
+        grid-column: 4/5;
+        grid-row: 1/3;
+    }
+
+@media (min-width:1400px){
+    .side{
+        position: absolute;
+        padding: 10px;
+        font-size: var(--fs-300);
+        transform: rotate(270deg);
+        top: 50%;
+        left: -180px;
+    }
+    
+    .right{
+        transform: rotate(90deg);
+        top: 50%;
+        right: -180px;  
+        left:auto; 
+        bottom: auto;
+
+    }
+}
+
+/* Another approach Grid Layout 2 Starts*/
+    .gridcont2{
+        grid-template-areas: 'one one one two five'
+        'three four four four five';
+    }
+/* Another approach Grid Layout 2 Ends*/
+
+}
