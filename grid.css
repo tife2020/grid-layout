@@ -42,7 +42,6 @@
     grid-area: one;
 }
 .gridcont2 .testimonial:nth-child(3) {
-    color: yellow;
     grid-area: two;
 }
 
